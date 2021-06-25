@@ -6,6 +6,8 @@ $(".btn").on("click", function(){
     console.log(id,timeBlock,inputEntry)
 })
 
+$("#currentDate").text(moment().format('MMMM Do YYYY, h:mm:ss a'))
+
 for(let i=9;i<=19;i++){
     $(`#${i}-entry`).val(localStorage.getItem(i))
 }
