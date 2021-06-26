@@ -7,7 +7,17 @@ $(".btn").on("click", function(){
 })
 
 $("#currentDate").text(moment().format('MMMM Do YYYY, h:mm:ss a'))
+var currentHour = moment().hours()
+console.log(currentHour)
 
 for(let i=9;i<=19;i++){
     $(`#${i}-entry`).val(localStorage.getItem(i))
+    if ( i > currentHour){
+        $(`#${i}-entry`).addClass("`g-success")
+    }else if( i == currentHour){
+        $(`#${i}-entry`).addClass("bg-teal");
+    }else{
+        $(`#${i}-entry`).addClass("bg-warning")
+    }
 }
+
